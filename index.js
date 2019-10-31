@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 
 
 const authRoute = require('./routes/auth')
+const postRoute = require('./routes/posts')
 
 
 dotenv.config()
@@ -18,5 +19,6 @@ console.log('connected to db!')
 app.use(express.json())
 
 app.use('/api/user', authRoute)
+app.use('/api/posts', postRoute)
 
 app.listen(3000, () => console.log('Server up and running port 3000'))
